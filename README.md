@@ -27,14 +27,14 @@ vite
 ```
 Acesse a aplicação em seu navegador através do endereço fornecido no terminal
 
-##Funcionamento do Projeto
+## Funcionamento do Projeto
 A aplicação consiste em um formulário de cadastro de usuário que utiliza as bibliotecas React Hook Form e Yup para validação dos campos.
 
 Ao submeter o formulário, caso haja algum campo inválido, será exibido um erro informando o motivo do erro em cada campo.
 
 Caso todos os campos estejam válidos, uma mensagem de sucesso será exibida.
 
-##Estrutura do Projeto
+## Estrutura do Projeto
 O projeto foi organizado da seguinte forma:
 
 - /src/components: Contém os componentes React utilizados na aplicação.

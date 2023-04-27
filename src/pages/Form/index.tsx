@@ -1,20 +1,25 @@
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Input from '../components/Input';
+import Input from '../../components/Input';
 import { FormValues } from './Form.structure';
+import { useNavigate } from "react-router-dom";
 
 
   const schema = Yup.object({
      name: Yup.string().required("Preencha o nome"),
-     surName: Yup.string().email().required("Preencha o sobrenome"),
+     surName: Yup.string().required("Preencha o sobrenome"),
   });
 const Form = () => {
   const { register, handleSubmit, formState: { errors } } =
     useForm<FormValues>({ resolver: yupResolver(schema) })
+    const navigate = useNavigate();
+
 
   const onSubmit = (data) => {
     console.log(data);
+
+     navigate('/displayform', { state: { data: data } })
   };
 
   return (

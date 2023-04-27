@@ -39,8 +39,6 @@ O projeto foi organizado da seguinte forma:
 
 - /src/components: Contém os componentes React utilizados na aplicação.
 
-- /src/styles: Contém os arquivos CSS utilizados na aplicação, gerados pelo Tailwind CSS.
-
 - /src/pages: Contém as páginas do projeto, contendo a estrutura do formulário.
 
 - /src/App.tsx: Arquivo principal da aplicação.

@@ -2,7 +2,9 @@
 import { useLocation } from 'react-router-dom';
 import Input from '../../components/Input';
 const DisplayForm = () => {
+
   const location = useLocation();
+  //essa const data é o que foi passado no navigate na página Form
   const data = location.state?.data;
   
   return (

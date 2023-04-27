@@ -29,7 +29,7 @@ export default function Input({
 }: IProps) {
   
   return (
-    <div>
+    <div className="w-full">
       <div
       className={`w-full h-[40px] pr-2 border border-gray-3
       rounded-lg flex justify-between items-center relative

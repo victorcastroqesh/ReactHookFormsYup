@@ -14,6 +14,7 @@ import { IProps } from "./Input.structure";
  * @param props onChange - onChange action
  * @param props label - label of the input
  * @param props placeholder - placeholder of the input
+ * @param props error - error message of the input
  * @param props register - register of the input
  * 
  */
@@ -23,11 +24,13 @@ export default function Input({
   label,
   disabled = false,
   value,
+  error,
   ...inputProps
 }: IProps) {
   
   return (
-    <div
+    <div>
+      <div
       className={`w-full h-[40px] pr-2 border border-gray-3
       rounded-lg flex justify-between items-center relative
       focus-within:border-primary-half
@@ -40,6 +43,10 @@ export default function Input({
       <label className="absolute -top-[15px] left-2 transition-all bg-gray-0 text-primary-half font-bold px-2">
         {disabled ? "" : label}
       </label>
+      </div>
+      
+      {error && <span className='text-red-500'>{error}</span>}
     </div>
+    
   );
 }

@@ -7,4 +7,5 @@ export interface IProps {
   placeholder?: string;
   label?: string;
   disabled?: boolean;
+  error?: string;
 }

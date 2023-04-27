@@ -22,16 +22,10 @@ const Form = () => {
       <div
         className="h-screen w-screen bg-gray-400 p-20
          flex flex-col items-center justify-center gap-20"
-      >
-        <div className="h-[100px] w-[60%]">    
-          <Input label='nome' register={register('name')}/>
-          {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
-        </div>
-
-        <div className="h-[100px] w-[60%]">  
-          <Input label='sobrenome' register={register('surName')}/>
-          {errors.surName && <span className='text-red-500'>{errors.surName.message}</span>}
-        </div>
+      >   
+          <Input label='nome' register={register('name')} error={errors.name?.message} />
+  
+        <Input label='sobrenome' register={register('surName')} error={errors.surName?.message} />
 
         <button
           className="rounded-lg bg-gray-800 flex p-2 text-gray-200

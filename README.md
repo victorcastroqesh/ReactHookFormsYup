@@ -32,8 +32,6 @@ A aplicação consiste em um formulário de cadastro de usuário que utiliza as 
 
 Ao submeter o formulário, caso haja algum campo inválido, será exibido um erro informando o motivo do erro em cada campo.
 
-Caso todos os campos estejam válidos, uma mensagem de sucesso será exibida.
-
 ## Estrutura do Projeto
 O projeto foi organizado da seguinte forma:
 

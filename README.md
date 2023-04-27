@@ -1,5 +1,5 @@
 # ReactHookFormsYup
-React + Typescript + Tailwind + React-hook-form + Yup
+React + Typescript + Tailwind + React-hook-form + Yup + React-router-dom
 
 Este projeto foi desenvolvido com o objetivo de demonstrar como utilizar o React Hook Form e o Yup para criar formulários em React.
 

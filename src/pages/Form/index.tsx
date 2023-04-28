@@ -14,9 +14,8 @@ import { useNavigate } from "react-router-dom";
 const Form = () => {
 
   //essa const register é o que vai ser passado para o componente Input para registrar os campos
-  //essa const errors é o que vai ser passado para o componente Input para mostrar os erros
-  //essa const handleSubmit é o que vai ser passado para o form para fazer o submit
   const { register, handleSubmit, formState: { errors } } =
+    //esse FormValues é o que vai ser passado para o useForm para especificar o tipo dos dados
     useForm<FormValues>({ resolver: yupResolver(schema) })
   
   //essa const navigate é o que vai ser usado para navegar entre as páginas

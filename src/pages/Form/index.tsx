@@ -29,7 +29,7 @@ const Form = () => {
     console.log(data);
 
     //essa função navigate é o que vai navegar entre as páginas e passar os dados
-     navigate('/displayform', { state: { data: data } })
+     navigate('/displayform', { state: { data } })
   };
 
   return (

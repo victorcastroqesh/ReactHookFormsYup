@@ -1,20 +1,22 @@
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../../components/Input';
 import { FormValues } from './Form.structure';
 import { useNavigate } from "react-router-dom";
+import InputSelect from '../../components/InputSelect';
 
 
   //esse é o schema do Yup. É o que vai validar os campos
   const schema = Yup.object({
      name: Yup.string().required("Preencha o nome"),
-     surName: Yup.string().required("Preencha o sobrenome"),
+    surName: Yup.string().required("Preencha o sobrenome"),
+     beverage: Yup.string().required("Preencha o campo de bebida"),
   });
 const Form = () => {
 
   //essa const register é o que vai ser passado para o componente Input para registrar os campos
-  const { register, handleSubmit, formState: { errors } } =
+  const { control, register, handleSubmit, formState: { errors } } =
     //esse FormValues é o que vai ser passado para o useForm para especificar o tipo dos dados
     useForm<FormValues>({ resolver: yupResolver(schema) })
   
@@ -39,6 +41,21 @@ const Form = () => {
   
         <Input label='sobrenome' register={register('surName')} error={errors.surName?.message} />
 
+        <Controller
+        name="beverage"
+        control={control}
+        defaultValue=""
+        render={({ field: { onChange, value } }) => (
+          <InputSelect
+            label="Chá ou Café?"
+            options={["Chá", "Café"]}
+            disabled={false}
+            setValue={onChange}
+            value={value}
+            error={errors.beverage?.message}
+          />
+        )}
+      />
         <button
           className="rounded-lg bg-gray-800 flex p-2 text-gray-200
           justify-between items-center relative"

@@ -13,6 +13,7 @@ const DisplayForm = () => {
          flex flex-col items-center justify-center gap-20"
       >
       <p>Olá, {data?.name} {data?.surName}!</p>
+      <p>Você escolheu {data?.beverage}!</p>
       </div>
   );
 };

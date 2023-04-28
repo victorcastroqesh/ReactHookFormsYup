@@ -1,5 +1,5 @@
 # ReactHookFormsYup
-React + Typescript + Tailwind + React-hook-form + Yup
+React + Typescript + Tailwind + React-hook-form + Yup + React-router-dom
 
 Este projeto foi desenvolvido com o objetivo de demonstrar como utilizar o React Hook Form e o Yup para criar formulários em React.
 
@@ -10,6 +10,7 @@ Este projeto foi desenvolvido com o objetivo de demonstrar como utilizar o React
 - Vite
 - React Hook Form
 - Yup
+- React Router Dom V6
 ## Como Executar o Projeto
 Clone o repositório em sua máquina local:
 ```bash
@@ -38,4 +39,13 @@ O projeto foi organizado da seguinte forma:
 
 - /src/pages: Contém as páginas do projeto, contendo a estrutura do formulário.
 
+- /src/routes.tsx: Contém as os as rotas de todas as páginas do projeto.
+
 - /src/App.tsx: Arquivo principal da aplicação.
+
+## Páginas
+As paginas estão definidas da segunte forma:
+
+- /src/pages/Form: É a pagina do formulário, nela usamos o react-hook-forms para o fluxo de formulário e o yup para a tratativa dos erros e o react-router-dom para mandar as props dos inputs para outra página sem a necessidade de um context.
+
+- /src/pages/DisplayForm: É a página que recebe as props por meio do react-router-dom e as mostra.

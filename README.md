@@ -23,7 +23,7 @@ npm install
 
 Inicie o servidor de desenvolvimento com vite:
 ```bash
-vite
+npm run dev
 ```
 Acesse a aplicação em seu navegador através do endereço fornecido no terminal
 

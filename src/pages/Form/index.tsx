@@ -25,7 +25,7 @@ const Form = () => {
   const navigate = useNavigate();
 
 //essa função é chamada quando o usuário clica no botão submit
-  const onSubmit = (data) => {
+  const onSubmit = (data : FormValues) => {
     console.log(data);
 
     //essa função navigate é o que vai navegar entre as páginas e passar os dados

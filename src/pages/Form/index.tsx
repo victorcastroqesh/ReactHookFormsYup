@@ -15,7 +15,8 @@ import InputSelect from '../../components/InputSelect';
   });
 const Form = () => {
 
-  //essa const register é o que vai ser passado para o componente Input para registrar os campos
+  //o register é o que vai ser passado para o componente Input para registrar os campos
+  //o control é o que vai ser passado para o componente InputSelect para registrar os campos
   const { control, register, handleSubmit, formState: { errors } } =
     //esse FormValues é o que vai ser passado para o useForm para especificar o tipo dos dados
     useForm<FormValues>({ resolver: yupResolver(schema) })
@@ -41,6 +42,7 @@ const Form = () => {
   
         <Input label='sobrenome' register={register('surName')} error={errors.surName?.message} />
 
+        {/* esse Controller é o que vai registrar os campos do InputSelect no react-hook-form */}
         <Controller
         name="beverage"
         control={control}

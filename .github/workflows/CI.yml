@@ -1,20 +1,23 @@
-name: Approvals
+name: Pull Request
 
-on:
-  pull_request_review:
-    types: [submitted]
-  pull_request:
-    types: [opened, synchronize]
+on: [pull_request]
 
 jobs:
-  approvals:
+  install:
+    name: Installing Packages
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    steps: 
+    -name: Checkout
+     uses: actions/checkout@v3
 
-      - name: Request reviews
-        uses: peter-evans/request-branch-review@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
+     -name: Cache node_modules
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+      
+      -name: Install Dependencies
+        run: npm install
+        

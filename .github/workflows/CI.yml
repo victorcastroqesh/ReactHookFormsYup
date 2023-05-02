@@ -1,0 +1,20 @@
+name: Approvals
+
+on:
+  pull_request_review:
+    types: [submitted]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  approvals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Request reviews
+        uses: peter-evans/request-branch-review@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.head_ref }}

@@ -1,6 +1,5 @@
 
 import { useLocation } from 'react-router-dom';
-import Input from '../../components/Input';
 const DisplayForm = () => {
 
   const location = useLocation();
@@ -13,7 +12,7 @@ const DisplayForm = () => {
          flex flex-col items-center justify-center gap-20"
       >
       <p>Olá, {data?.name} {data?.surName}!</p>
-      <p>Você escolheu {data?.beverage}!</p>
+      <p>Sua bebida favorita é {data?.beverage}!</p>
       </div>
   );
 };

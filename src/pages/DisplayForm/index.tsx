@@ -1,6 +1,5 @@
 
 import { useLocation } from 'react-router-dom';
-import Input from '../../components/Input';
 const DisplayForm = () => {
 
   const location = useLocation();

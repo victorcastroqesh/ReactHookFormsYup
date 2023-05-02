@@ -1,7 +1,7 @@
 import React from "react";
 
 import { IProps } from "./Input.structure";
-import { Controller } from "react-hook-form";
+import { Controller, FieldValues } from "react-hook-form";
 
 /**
  * @description - Input component.
@@ -14,13 +14,13 @@ import { Controller } from "react-hook-form";
  * 
  */
 
-export default function InputControler({
+export default function InputControler<T extends FieldValues>({
   label,
   disabled = false,
   error,
   control,
   name
-}: IProps) {
+}: IProps<T>) {
   
   return (
     <div className="w-full">
@@ -33,7 +33,6 @@ export default function InputControler({
       <Controller
         name={name}
         control={control}
-        defaultValue=""
         render={({
             field: { onChange, value }
           }) => (

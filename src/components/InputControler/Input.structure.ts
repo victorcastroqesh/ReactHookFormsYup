@@ -1,10 +1,10 @@
-import { UseFormRegisterReturn } from "react-hook-form";
+import { Control, FieldPath, FieldValues } from "react-hook-form";
 
-export interface IProps {
+export interface IProps<T extends FieldValues> {
   placeholder: string;
   label: string;
   disabled?: boolean;
   error?: string;
-  control: any;
-  name: string
+  control: Control<T>;
+  name: FieldPath<T>
 }
